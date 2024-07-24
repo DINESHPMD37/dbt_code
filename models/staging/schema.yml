@@ -1,0 +1,20 @@
+version: 2
+sources:
+    - name: staging
+      database: "{{('dbt_db')}}"
+      schema: stage_layer
+      tables:
+        - name: raw_items
+        - name: raw_supplies
+        - name: customers
+          columns:
+            - name: id
+              tests: 
+                - unique
+        - name: raw_products
+          columns:
+            - name: price
+              tests:
+               - unique
+               
+
