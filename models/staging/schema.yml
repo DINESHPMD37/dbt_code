@@ -16,5 +16,6 @@ sources:
             - name: price
               tests:
                - unique
+        - name: customer
                
 
