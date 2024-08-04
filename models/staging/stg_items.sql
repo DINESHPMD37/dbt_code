@@ -1,4 +1,6 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table',
+tags=["staging"]
+) }}
 
 with stg_items as (
     select * from {{source('staging','raw_items')}}
